@@ -20,8 +20,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </header>
         <main>
-          <Header />
-          {children}
+          <div className="w-full h-screen">
+            <Header />
+            {children}
+          </div>
         </main>
       </body>
     </html>
