@@ -7,6 +7,9 @@ export default function Home() {
       <h2 className="w-20 h-10 bg-blue-400 text-center">
         <Link href={'/dashboard'}>Dashboard</Link>
       </h2>
+      <h2 className="w-20 h-15 bg-yellow-400 text-center">
+        <Link href={'/products/teste'}>Product param</Link>
+      </h2>
     </div>
   )
 }
