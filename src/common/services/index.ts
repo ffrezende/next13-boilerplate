@@ -1,5 +1,7 @@
+const URL = 'https://api.github.com/users/'
+
 export const getGitUser = async (gitName: string): Promise<any> => {
-  const response = await fetch(`https://api.github.com/users/${gitName}`, {
+  const response = await fetch(`${URL}${gitName}`, {
     next: {
       // extended from commmon fetch
       revalidate: 30,
@@ -10,8 +12,9 @@ export const getGitUser = async (gitName: string): Promise<any> => {
   return response.json()
 }
 
+// const repo = `${URL}${gitName}/repos`
 export const getGitUserRepos = async (gitName: string): Promise<any> => {
-  const response = await fetch(`https://api.github.com/users/${gitName}/repos`, {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/todos/1`, {
     next: {
       // extended from commmon fetch
       revalidate: 30,

@@ -2,6 +2,7 @@ import useGitUser from '@/common/hooks/useGitUser'
 import Repos from '@/components/repos'
 import User from '@/components/user'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 // Component Async calling promise
 export default async function Home() {
@@ -15,8 +16,12 @@ export default async function Home() {
         <Link href={'/products/teste'}>Product param</Link>
       </h2>
 
-      <User />
-      <Repos />
+      <Suspense fallback={<div>Loading User...</div>}>
+        <User />
+      </Suspense>
+      <Suspense fallback={<div>Loading Repos...</div>}>
+        <Repos />
+      </Suspense>
     </div>
   )
 }

@@ -8,6 +8,7 @@ export default function useGitUser() {
   }
 
   const getUserReposInfo = async (repo: string) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     const user = await getGitUserRepos(repo)
 
     return user
