@@ -1,9 +1,17 @@
-import { getGitUser } from '@/common/services'
+import { getGitUser, getGitUserRepos } from '@/common/services'
 
 export default function useGitUser() {
-  const getUserGitInfo = async () => {
-    const user = await getGitUser('ffrezende')
+  const getUserGitInfo = async (name: string) => {
+    const user = await getGitUser(name)
+
+    return user
   }
 
-  return { getUserGitInfo }
+  const getUserReposInfo = async (repo: string) => {
+    const user = await getGitUserRepos(repo)
+
+    return user
+  }
+
+  return { getUserGitInfo, getUserReposInfo }
 }
